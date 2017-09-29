@@ -5,14 +5,13 @@ package com.example.wendt.listexample;
  */
 
 public class CoolGuy {
-    private String name;
-    private String description;
-    private int imgResourceID;
+    private String name, description;
+    private int imageResourceID;
 
-    public CoolGuy(String name, String description, int imgResourceID) {
+    public CoolGuy(String name, String description, int imageResourceID) {
         this.name = name;
         this.description = description;
-        this.imgResourceID = imgResourceID;
+        this.imageResourceID = imageResourceID;
     }
 
     public String getName() {
@@ -31,11 +30,11 @@ public class CoolGuy {
         this.description = description;
     }
 
-    public int getImgResourceID() {
-        return imgResourceID;
+    public int getImageResourceID() {
+        return imageResourceID;
     }
 
-    public void setImgResourceID(int imgResourceID) {
-        this.imgResourceID = imgResourceID;
+    public void setImageResourceID(int imageResourceID) {
+        this.imageResourceID = imageResourceID;
     }
 }
