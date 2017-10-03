@@ -3,10 +3,14 @@ package com.example.wendt.listexample;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.ContextMenu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -28,6 +32,26 @@ public class MainActivity extends AppCompatActivity {
         setAdapter();
     }
 
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+        switch (item.getItemId()) {
+            case R.id.menu_delete:
+                Toast.makeText(this, "deleted", Toast.LENGTH_SHORT).show();
+                return true;
+            default:
+                return super.onContextItemSelected(item);
+        }
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v,
+                                    ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_context_list, menu);
+    }
+
     private void setAdapter() {
         ArrayAdapter<CoolGuy> adapter = new ArrayAdapter<CoolGuy>(this, R.layout.list_item_toughie, toughies);
         toughieListView.setAdapter(adapter);
@@ -44,6 +68,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(toughieProfile);
             }
         });
+
+        registerForContextMenu(toughieListView);
     }
 
     private void createCoolGuys() {
