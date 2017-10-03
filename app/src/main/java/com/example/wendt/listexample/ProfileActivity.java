@@ -34,13 +34,13 @@ public class ProfileActivity extends AppCompatActivity {
         Intent toughieProfile = getIntent();
         name = toughieProfile.getStringExtra(MainActivity.EXTRA_NAME);
         description = toughieProfile.getStringExtra(MainActivity.EXTRA_DESCRIPTION);
-        //image = toughieProfile.getIntExtra(MainActivity.EXTRA_IMAGE);
+        image = toughieProfile.getIntExtra(MainActivity.EXTRA_IMAGE, 0);
         Toast.makeText(this, name, Toast.LENGTH_SHORT).show();
     }
 
-    private void setIntents(){
+    private void setIntents() {
         profileNameTextView.setText(name);
         profileDescriptionTextView.setText(description);
-        //profileImageView.setImageResource(image);
+        profileImageView.setImageResource(image);
     }
 }

@@ -48,9 +48,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void createCoolGuys() {
         toughies = new ArrayList<>();
-        toughies.add(new CoolGuy("Joe Cool", "Ate cereal without any milk", 0));
-        toughies.add(new CoolGuy("Bodybuilder Billy", "Opened a pickle jar", 0));
-        toughies.add(new CoolGuy("Edgar J. Fitz", "Able to eat pineapple pizza", 0));
+        toughies.add(new CoolGuy("Joe Cool", "Ate cereal without any milk", getResources().getIdentifier("joe_cool", "drawable", getPackageName())));
+        toughies.add(new CoolGuy("Bodybuilder Billy", "Opened a pickle jar", getResources().getIdentifier("bodybuilder_billy", "drawable", getPackageName())));
+        toughies.add(new CoolGuy("Godd Howard", "Tells lies for a living", getResources().getIdentifier("godd_howard", "drawable", getPackageName())));
     }
 
     private void wireWidgets() {

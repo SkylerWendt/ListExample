@@ -37,4 +37,7 @@ public class CoolGuy {
     public void setImageResourceID(int imageResourceID) {
         this.imageResourceID = imageResourceID;
     }
+
+    @Override
+    public String toString() { return name; }
 }
